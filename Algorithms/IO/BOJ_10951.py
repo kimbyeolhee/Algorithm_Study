@@ -1,4 +1,15 @@
-# TODO: 다시풀기
 # 2022-03-29
-# 11:11-
+# 11:11-못풀었음
+
+# 2022-03-30
+# 11:33-
+
+while True:
+  try:
+    a, b = map(int, input().split())
+    print(a+b)
+  except EOFError:
+    break
+
+
 

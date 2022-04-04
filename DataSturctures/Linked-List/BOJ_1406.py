@@ -1,6 +1,9 @@
 # 2022-04-03
 # 10:50-실패
 
+# 2022-04-04
+# 3:43-실패
+
 # TODO: 다시풀기
 
 import sys
@@ -26,7 +29,7 @@ class LinkedList():
     t_node.prev = new_node
     p_node.next = new_node
 
-  def delete(self, t_node):
+  def remove(self, t_node):
     f_node = t_node.prev
     r_node = t_node.next
     f_node.next = r_node
@@ -43,23 +46,23 @@ class LinkedList():
 
 
 if __name__ == "__main__":
-  command = list(input())
-  memos = LinkedList()
-  for i in range(len(command)):
-    memos.insert(memos.tail, command[i])
+  string = list(input())
+  editor = LinkedList()
+  for s in string:
+    editor.insert(editor.tail, s)
   
-  for i in range(int(input())):
-    order = input()
-    if order[0] == "L":
-      if memos.cur_node.prev.prev != None:
-        memos.cur_node = memos.cur_node.prev
-    elif order[0] == "D":
-      if memos.cur_node.next != None:
-        memos.cur_node = memos.cur_node.next
-    elif order[0] == "B":
-      if memos.cur_node.prev.prev != None:
-        memos.delete(memos.cur_node.prev)
+  for _ in range(int(input())):
+    command = list(input().split())
+    if command[0] == "L":
+      if editor.cur_node.prev.prev != None:
+        editor.cur_node = editor.cur_node.prev
+    elif command[0] == "D":
+      if editor.cur_node.next != None:
+        editor.cur_node = editor.cur_node.next
+    elif command[0] == "B":
+      if editor.cur_node.prev.prev != None:
+        editor.remove(editor.cur_node.prev)
     else:
-      memos.insert(memos.cur_node, order[2])
+      editor.insert(editor.cur_node, command[1])
 
-memos.print()
+editor.print()

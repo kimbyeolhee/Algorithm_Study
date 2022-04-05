@@ -1,3 +1,6 @@
+# 2022-04-05
+# 12:06-12:09
+
 import sys
 def input():
   return sys.stdin.readline().rstrip()

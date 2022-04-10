@@ -1,6 +1,9 @@
 # 2022-04-03
 # 10:20-실패
 
+# 2022-04-06
+# 6:46-실패
+
 # TODO: 다시풀기
 
 from collections import deque
